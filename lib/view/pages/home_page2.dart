@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_my_note/view/pages/stick_note.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -89,6 +88,29 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  AlertDialog _buildInsertAlertDialog() {
+    //_controller.text = '';
+    return AlertDialog(
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+              //controller: _controller,
+              ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            // viewModel.onEvent(HomeEvent.insert(_controller.text));
+            // Navigator.pop(context, true);
+          },
+          child: const Text('Insert'),
+        ),
+      ],
     );
   }
 }
